@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Examen - Conductor VTC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="app-header">
+        <div class="brand">
+            <span class="eyebrow">Simulador Oficial</span>
+            <h1>Examen VTC para Conductores</h1>
+            <p>Entrena con preguntas tipo examen y revisa tus resultados de forma rápida.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="start-screen" class="screen active">
+            <div class="panel intro-card">
+                <h2>Bienvenido</h2>
+                <p>Selecciona un cuestionario para comenzar y practica con preguntas de lengua castellana y normativa VTC.</p>
+                <div class="exam-info">
+                    <div>
+                        <strong>Nº de preguntas:</strong>
+                        <span id="total-questions">60</span>
+                    </div>
+                    <div>
+                        <strong>Tema:</strong>
+                        <span>Normativa VTC y conocimientos del conductor</span>
+                    </div>
+                    <div>
+                        <strong>Tiempo estimado:</strong>
+                        <span id="estimated-time">90 minutos</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel test-selection">
+                <h3>Selecciona el cuestionario</h3>
+                <div class="button-grid">
+                    <button type="button" class="btn btn-primary start-btn" data-test="1">Prueba I</button>
+                    <button type="button" class="btn btn-primary start-btn" data-test="2">Prueba II</button>
+                    <button type="button" class="btn btn-primary start-btn" data-test="3">Prueba III</button>
+                    <button type="button" class="btn btn-primary start-btn" data-test="4">Prueba IV</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="exam-screen" class="screen">
+            <div class="panel exam-header">
+                <div class="progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <span id="question-counter">Pregunta 1 de 60</span>
+                </div>
+                <button type="button" id="summary-btn" class="btn btn-secondary">Resumen</button>
+            </div>
+
+            <article class="panel question-container">
+                <h2 id="question-text">Pregunta</h2>
+                <div class="options" id="options"></div>
+                <button type="button" id="submit-btn" class="btn btn-primary" disabled>Enviar Respuesta</button>
+                <div id="feedback" class="feedback" aria-live="polite"></div>
+            </article>
+
+            <div class="panel navigation">
+                <button type="button" id="prev-btn" class="btn btn-secondary" disabled>Anterior</button>
+                <button type="button" id="next-btn" class="btn btn-secondary" disabled>Siguiente</button>
+            </div>
+        </section>
+
+        <section id="summary-screen" class="screen">
+            <div class="panel">
+                <h2>Resumen del Examen</h2>
+                <div id="summary-list"></div>
+                <button type="button" id="close-summary-btn" class="btn btn-secondary">Cerrar</button>
+            </div>
+        </section>
+
+        <section id="results-screen" class="screen">
+            <div class="panel results-card">
+                <h2>Resultados del Examen</h2>
+                <div class="results-summary">
+                    <div><strong>Puntuación:</strong> <span id="score"></span>%</div>
+                    <div><strong>Correctas:</strong> <span id="correct-count"></span></div>
+                    <div><strong>Incorrectas:</strong> <span id="incorrect-count"></span></div>
+                    <div><strong>No respondidas:</strong> <span id="unanswered-count"></span></div>
+                </div>
+                <div class="review">
+                    <h3>Revisión de respuestas</h3>
+                    <div id="review-list"></div>
+                </div>
+                <div class="actions">
+                    <button type="button" id="restart-btn" class="btn btn-primary">Reiniciar Examen</button>
+                    <button type="button" id="home-btn" class="btn btn-secondary">Volver al Inicio</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>Simulador de examen VTC — Práctica para obtener tu certificado de conductor autorizado.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

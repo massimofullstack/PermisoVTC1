@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock - Multiple Timezones</title>
+    <link rel="stylesheet" href="clock-styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🕐 Digital Clock</h1>
+            <p>Track time across the world</p>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <div class="timezone-input">
+                    <input 
+                        type="text" 
+                        id="timezoneInput" 
+                        placeholder="Search timezone (e.g., Tokyo, Europe/Paris)..."
+                        autocomplete="off"
+                    >
+                    <div class="suggestions" id="suggestionsList"></div>
+                </div>
+                <button id="addBtn">Add Timezone</button>
+            </div>
+
+            <div class="presets">
+                <button class="btn-preset" data-timezone="America/New_York">New York</button>
+                <button class="btn-preset" data-timezone="Europe/London">London</button>
+                <button class="btn-preset" data-timezone="Europe/Paris">Paris</button>
+                <button class="btn-preset" data-timezone="Asia/Tokyo">Tokyo</button>
+                <button class="btn-preset" data-timezone="Asia/Dubai">Dubai</button>
+                <button class="btn-preset" data-timezone="Australia/Sydney">Sydney</button>
+                <button class="btn-preset" data-timezone="Asia/Shanghai">Shanghai</button>
+                <button class="btn-preset" data-timezone="America/Los_Angeles">Los Angeles</button>
+            </div>
+        </div>
+
+        <div id="clocksGrid" class="grid"></div>
+    </div>
+
+    <script src="clock-script.js"></script>
+</body>
+</html>
